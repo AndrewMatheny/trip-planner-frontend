@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
 
+let background = 'https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg'
+
 export default class NavBar extends Component {
   state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+
   render() {
-    const { activeItem } = this.state
+	const { activeItem } = this.state
 
     return (
       <div>
@@ -38,9 +41,9 @@ export default class NavBar extends Component {
           </Menu.Menu>
         </Menu>
 
-        <Segment>
-          <img src='https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg' />
-        </Segment>
+        {/* <Segment> */}
+          {/* <img src='https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg' style={this.style} /> */}
+        {/* </Segment> */}
       </div>
     )
   }
