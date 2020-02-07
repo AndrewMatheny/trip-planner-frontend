@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from './components/NavBar'
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
 // import logo from './logo.svg';
@@ -6,14 +7,28 @@ import React from 'react';
 
 class App extends React.Component {
 
-  // getTrips = () => {
-  //   fetch(`localhost`)
-  // }
+  state = {
+    userTrips: [],
+    selectedTrip: "",
+    selected: false
+  }
+
+  getTrips = () => {
+    fetch(`http://localhost:3000/users/1`)
+    .then(res => res.json())
+    .then(data => this.setState({
+      userTrips: data
+    }))
+  }
+
+  componentDidMount() {
+    this.getTrips()
+  }
 
   render() {
     return (
       <div>
-        {/* <Navbar /> */}
+        <NavBar />
         {/* <TripContainer /> */}
       </div>
     );
