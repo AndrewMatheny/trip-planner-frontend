@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ButtonExampleButton from './Btn.js' //Semantic UI button
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React - You can't make me
+          <ButtonExampleButton />
+<button class="ui button" role="button">Btn with Semantic-UI</button>
         </a>
       </header>
     </div>
