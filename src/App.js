@@ -18,9 +18,12 @@ class App extends React.Component {
 
   state = {
     userTrips: null,
+    allUsers: [],
     selectedTrip: "",
     selected: false,
-    isLoaded: false
+    isLoaded: false,
+    loggedIn: false,
+    enteredUser: ""
   }
 
   backgroundStyle = {
@@ -38,8 +41,36 @@ class App extends React.Component {
     }))
   }
 
+  getUsers = () => {
+    fetch(`http://localhost:3000/users`)
+    .then(res => res.json())
+    .then(data => this.setState({
+      allUsers: data
+    }))
+  }
+
+  matchUser = enteredName => {
+    this.state.allUsers.forEach(user => {
+      if(user.username === enteredName) {
+        this.setState({
+          loggedIn: user.id
+        })
+      }
+    })
+  }
+
+  handleLogin = (e) => {
+    //   console.log(e.target.tripname.value)
+    let userName = e.target.username.value
+    this.setState({
+      enteredUser: userName
+    }, () => this.matchUser(this.state.enteredUser))
+  }
+
   componentDidMount() {
+    this.getUsers()
     this.getTrips()
+    
   }
 
   render() {
@@ -63,12 +94,15 @@ class App extends React.Component {
 
         <NavBar />
 
-        {/* <LogInForm />  */}
+
+        <LogInForm handleSubmit={this.handleLogin}/> 
         <TripIndex />
         {/* <SigninContainer /> */}
           <CreateTripContainer user={this.state.userTrips}/> 
         {/* <TripContainer /> */}
         <TripPageContainer />
+      
+
 
       </div>
     );
