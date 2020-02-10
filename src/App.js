@@ -9,6 +9,8 @@ import LogInForm from './components/LogInForm'
 import background from './images/background_road.jpg'
 // let background = 'https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg'
 
+import TripIndex from './TripIndex';
+
 class App extends React.Component {
 
   state = {
@@ -40,9 +42,10 @@ class App extends React.Component {
     return (
       <div style={this.backgroundStyle}>
         <NavBar />
-        <LogInForm />
-        {/* <TripContainer /> */}
+        <LogInForm /> 
+        <TripIndex />
         {/* <SigninContainer /> */}
+
       </div>
     );
   }
