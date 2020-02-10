@@ -42,7 +42,7 @@ class App extends React.Component {
         <NavBar />
         <LogInForm />
         {/* <TripContainer /> */}
-        <SigninContainer />
+        {/* <SigninContainer /> */}
       </div>
     );
   }
