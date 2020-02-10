@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
 import CreateTripContainer from './containers/CreateTripContainer'
+import TripPageContainer from './TripPageContainer'
 // import SigninContainer from './SigninContainer';
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
@@ -61,13 +62,13 @@ class App extends React.Component {
       <div style={this.backgroundStyle}>
 
         <NavBar />
+
         {/* <LogInForm />  */}
         <TripIndex />
         {/* <SigninContainer /> */}
-
-          <CreateTripContainer user={this.state.userTrips}/>
-            
-          {/* <TripContainer /> */}
+          <CreateTripContainer user={this.state.userTrips}/> 
+        {/* <TripContainer /> */}
+        <TripPageContainer />
 
       </div>
     );
