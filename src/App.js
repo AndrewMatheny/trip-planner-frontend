@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
+import CreateTripContainer from './containers/CreateTripContainer'
 // import SigninContainer from './SigninContainer';
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
@@ -12,9 +14,10 @@ import background from './images/background_road.jpg'
 class App extends React.Component {
 
   state = {
-    userTrips: [],
+    userTrips: null,
     selectedTrip: "",
-    selected: false
+    selected: false,
+    isLoaded: false
   }
 
   backgroundStyle = {
@@ -38,11 +41,30 @@ class App extends React.Component {
 
   render() {
     return (
+      // <div style={this.backgroundStyle}>
+      //   <Router>
+      //     <NavBar />
+
+         
+      //     <LogInForm /> 
+      //     <Route 
+      //     path="/createtrip" 
+      //     exact 
+      //     render={props => <CreateTripContainer {...props} user={this.state.userTrips}/>}/>
+            
+      //     {/* <TripContainer /> */}
+      //     {/* <SigninContainer /> */}
+      //   </Router>
+      // </div>
       <div style={this.backgroundStyle}>
-        <NavBar />
-        <LogInForm />
-        {/* <TripContainer /> */}
-        {/* <SigninContainer /> */}
+          <NavBar />
+
+         
+          {/* <LogInForm />  */}
+          <CreateTripContainer user={this.state.userTrips}/>
+            
+          {/* <TripContainer /> */}
+          {/* <SigninContainer /> */}
       </div>
     );
   }
