@@ -73,8 +73,36 @@ class App extends React.Component {
     
   }
 
+  showPage = () => {
+    if(this.state.loggedIn) {
+      return  (<div style={this.backgroundStyle}>
+
+      <NavBar />
+
+
+      {/* <LogInForm handleSubmit={this.handleLogin}/>  */}
+      <TripIndex />
+      {/* <SigninContainer /> */}
+        <CreateTripContainer user={this.state.userTrips}/> 
+      {/* <TripContainer /> */}
+      <TripPageContainer />
+    
+
+
+    </div>
+      )
+    } else {
+      return (<div style={this.backgroundStyle}>
+
+      <NavBar />
+      <LogInForm handleSubmit={this.handleLogin}/> 
+      </div> )
+    }
+  }
+
   render() {
     return (
+      this.showPage()
       // <div style={this.backgroundStyle}>
       //   <Router>
       //     <NavBar />
@@ -90,21 +118,24 @@ class App extends React.Component {
       //     {/* <SigninContainer /> */}
       //   </Router>
       // </div>
-      <div style={this.backgroundStyle}>
-
-        <NavBar />
 
 
-        <LogInForm handleSubmit={this.handleLogin}/> 
-        <TripIndex />
-        {/* <SigninContainer /> */}
-          <CreateTripContainer user={this.state.userTrips}/> 
-        {/* <TripContainer /> */}
-        <TripPageContainer />
+    //----------------------------------------
+      // <div style={this.backgroundStyle}>
+
+      //   <NavBar />
+
+
+      //   <LogInForm handleSubmit={this.handleLogin}/> 
+      //   <TripIndex />
+      //   {/* <SigninContainer /> */}
+      //     <CreateTripContainer user={this.state.userTrips}/> 
+      //   {/* <TripContainer /> */}
+      //   <TripPageContainer />
       
 
 
-      </div>
+      // </div>
     );
   }
 }

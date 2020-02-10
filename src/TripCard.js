@@ -3,7 +3,7 @@ import React from "react";
 
 const TripCard = props => {
   const { trip } = props;
-  console.log(props)
+  // console.log(props)
 
   return (
     <>
