@@ -4,6 +4,8 @@ import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 
+import TripIndex from './TripIndex';
+
 class App extends React.Component {
 
   // getTrips = () => {
@@ -14,7 +16,7 @@ class App extends React.Component {
     return (
       <div>
         {/* <Navbar /> */}
-        {/* <TripContainer /> */}
+        <TripIndex />
       </div>
     );
   }
