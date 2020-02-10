@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar'
+import LogInForm from './components/LogInForm'
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
 // import logo from './logo.svg';
@@ -38,6 +39,7 @@ class App extends React.Component {
     return (
       <div style={this.backgroundStyle}>
         <NavBar />
+        <LogInForm />
         {/* <TripContainer /> */}
       </div>
     );
