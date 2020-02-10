@@ -1,4 +1,5 @@
 import React from 'react';
+import SigninContainer from './SigninContainer';
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
 // import logo from './logo.svg';
@@ -15,6 +16,7 @@ class App extends React.Component {
       <div>
         {/* <Navbar /> */}
         {/* <TripContainer /> */}
+        <SigninContainer />
       </div>
     );
   }
