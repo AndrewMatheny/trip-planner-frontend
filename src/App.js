@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
+import TripPageContainer from './TripPageContainer'
 // import SigninContainer from './SigninContainer';
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
@@ -40,9 +41,10 @@ class App extends React.Component {
     return (
       <div style={this.backgroundStyle}>
         <NavBar />
-        <LogInForm />
+        {/* <LogInForm /> */}
         {/* <TripContainer /> */}
-        <SigninContainer />
+        {/* <SigninContainer /> */}
+        <TripPageContainer />
       </div>
     );
   }
