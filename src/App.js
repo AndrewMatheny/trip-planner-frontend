@@ -70,12 +70,20 @@ class App extends React.Component {
     
   }
 
+  selectTrip = (trip) => {
+    console.log(trip)
+    this.setState({
+      selectedTrip: trip, 
+      selected: true
+    })
+  }
+
   showPage = () => {
     if(this.state.loggedIn) {
       return  (
       <div style={this.backgroundStyle}>
         <NavBar />
-        <TripIndex user={this.state.loggedIn} userTrips={this.state.userTrips}/>
+        <TripIndex user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>
         <CreateTripContainer user={this.state.userTrips}/> 
         <TripPageContainer user={this.state.userTrips}/>
       </div>
