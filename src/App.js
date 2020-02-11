@@ -105,12 +105,12 @@ class App extends React.Component {
     return (
       this.showPage()
       // <div style={this.backgroundStyle}>
-      //   <Router>
-      //     <NavBar />
+      // //   <Router>
+      // //     <NavBar />
 
          
-      //     <LogInForm /> 
-      //     <Route 
+      // //     <LogInForm /> 
+      // //     <Route 
       //     path="/createtrip" 
       //     exact 
       //     render={props => <CreateTripContainer {...props} user={this.state.userTrips}/>}/>
@@ -120,12 +120,12 @@ class App extends React.Component {
       //   </Router>
       // </div>
 
-
     //----------------------------------------
       // <div style={this.backgroundStyle}>
 
       //   <NavBar />
 
+        // <TripPageContainer />
 
       //   <LogInForm handleSubmit={this.handleLogin}/> 
       //   <TripIndex />
