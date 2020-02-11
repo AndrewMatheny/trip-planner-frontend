@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import {
-  Container, Divider, Grid, Header, Image, List, Segment, Icon} from 'semantic-ui-react'
+  Container, Grid, Header, Image, Segment, Icon, Button, Form, Input, TextArea} from 'semantic-ui-react'
 import PackingListContainer from "./PackingListContainer";
 import StopsContainer from "./StopsContainer";
+import EditTripContainer from './containers/EditTripContainer.js'
 
 class TripPageDetails extends Component {
 
@@ -13,7 +14,8 @@ class TripPageDetails extends Component {
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Grid>
             <Grid.Column width={4}>
-              <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
+              <Image src={this.props.trip.image} />
+              <Button basic color='orange' on>Edit Trip</Button>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h2'>
@@ -26,6 +28,9 @@ class TripPageDetails extends Component {
               <p>Notes: {this.props.trip.notes}</p>
             </Grid.Column>
           </Grid>
+        <Segment raised style={{margin: '40px'}}>
+          <EditTripContainer trip={this.props.trip} updateDetails={this.props.updateDetails}/>
+        </Segment>
         </div>
         <Segment raised style={{margin: '40px'}}>
               <PackingListContainer items={this.props.trip.items} />
