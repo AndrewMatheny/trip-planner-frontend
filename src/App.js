@@ -64,9 +64,9 @@ class App extends React.Component {
         <NavBar />
 
         {/* <LogInForm />  */}
-        <TripIndex />
+        {/* <TripIndex /> */}
         {/* <SigninContainer /> */}
-          <CreateTripContainer user={this.state.userTrips}/> 
+          {/* <CreateTripContainer user={this.state.userTrips}/>  */}
         {/* <TripContainer /> */}
         <TripPageContainer />
 
