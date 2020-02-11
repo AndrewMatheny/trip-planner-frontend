@@ -6,7 +6,7 @@ class CreateItemContainer extends Component {
     state = {}
     
       handleChange = (e) => {
-        console.log(e.target)
+        // console.log(e.target)
           this.setState({
               [e.target.name]: e.target.value
           })
@@ -68,7 +68,7 @@ class CreateItemContainer extends Component {
     
             </Form.Group>
 
-            <Form.Group>
+            {/* <Form.Group>
             <Checkbox
                 style={{padding: '0.5rem'}}
                 control={Input}
@@ -76,7 +76,7 @@ class CreateItemContainer extends Component {
                 onChange={this.handleChange}
                 checked={this.state.checked}
                 />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Field control={Button}>Submit</Form.Field>
           </Form>
