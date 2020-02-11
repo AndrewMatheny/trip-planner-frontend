@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
   Container, Divider, Grid, Header, Image, List, Segment, Icon} from 'semantic-ui-react'
 import PackingListContainer from "./PackingListContainer";
+import StopsContainer from "./StopsContainer";
 
 class TripPageDetails extends Component {
 
@@ -27,7 +28,10 @@ class TripPageDetails extends Component {
           </Grid>
         </div>
         <Segment raised style={{margin: '40px'}}>
-          <PackingListContainer items={this.props.trip.items} />
+              <PackingListContainer items={this.props.trip.items} />
+        </Segment>
+        <Segment raised style={{margin: '40px'}}>
+              <StopsContainer stops={this.props.trip.stops} />
         </Segment>
         </Container>
     </div>
