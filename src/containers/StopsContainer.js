@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import StopDisplay from './StopDisplay'
-import CreateStop from './containers/CreateStop'
+import StopDisplay from '../components/StopDisplay'
+import CreateStop from './CreateStop'
 
 class StopsContainer extends Component {
   stopsCollection = () => {

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {Container, Grid, Header, Image, Segment, Icon, Button} from 'semantic-ui-react'
-import PackingListContainer from "./PackingListContainer";
-import StopsContainer from "./StopsContainer";
-import EditTripContainer from './containers/EditTripContainer.js'
+import PackingListContainer from "../containers/PackingListContainer";
+import StopsContainer from "../containers/StopsContainer";
+import EditTripContainer from '../containers/EditTripContainer'
 
 class TripPageDetails extends Component {
 

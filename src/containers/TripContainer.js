@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TripCard from './TripCard';
+import TripCard from '../components/TripCard';
 import { Container } from 'semantic-ui-react';
 // import { Card } from 'semantic-ui-react'
 

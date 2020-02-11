@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TripPageDetails from './TripPageDetails'
+import TripPageDetails from '../components/TripPageDetails'
 
 class TripPageContainer extends Component {
 

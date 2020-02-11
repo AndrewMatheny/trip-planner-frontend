@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PackingListDisplay from './PackingListDisplay'
-import CreateItemContainer from './containers/CreateItemContainer'
+import PackingListDisplay from '../components/PackingListDisplay'
+import CreateItemContainer from './CreateItemContainer'
 
 class PackingListContainer extends Component {
   itemCollection = () => {

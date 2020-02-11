@@ -3,8 +3,8 @@ import React from 'react';
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
 import CreateTripContainer from './containers/CreateTripContainer'
-import TripPageContainer from './TripPageContainer'
-import TripIndex from './TripIndex';
+import TripPageContainer from './containers/TripPageContainer'
+import TripIndex from './containers/TripIndex';
 
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
