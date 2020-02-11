@@ -88,7 +88,7 @@ class EditTripContainer extends Component{
 render () {
   return (
         <Form onSubmit={(e) =>this.handleSubmit(e)}> 
-          <Header textAlign='center'>Create a Trip</Header>
+          <Header textAlign='center'>Edit Trip</Header>
 
             <Form.Group widths='equal'>
             <Form.Field

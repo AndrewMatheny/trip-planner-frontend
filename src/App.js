@@ -1,15 +1,10 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
 import CreateTripContainer from './containers/CreateTripContainer'
 import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
-
-
-// import ButtonExampleButton from './Btn.js' //Semantic UI button
-// import logo from './logo.svg';
-// import './App.css';
 import background from './images/background_road.jpg'
 
 class App extends React.Component {
@@ -82,17 +77,28 @@ class App extends React.Component {
     if(this.state.loggedIn) {
       return  (
       <div style={this.backgroundStyle}>
-        <NavBar />
-        <TripIndex user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>
-        <CreateTripContainer user={this.state.userTrips}/> 
-        <TripPageContainer user={this.state.userTrips}/>
+        <Router>
+          <NavBar />
+          <TripIndex user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>
+          <Route 
+            path="/trip/:id"
+            render={props => <TripPageContainer {...props} user={this.state.userTrips}/>}/>
+          {/* <CreateTripContainer user={this.state.userTrips}/>  */}
+          {/* <TripPageContainer user={this.state.userTrips}/> */}
+        </Router>
       </div>
       )
     } else {
       return (
       <div style={this.backgroundStyle}>
-        <NavBar />
-        <LogInForm handleSubmit={this.handleLogin}/> 
+        <Router>
+          <NavBar />
+        <Route 
+        path="/"
+        exact
+        render={props => <LogInForm {...props} handleSubmit={this.handleLogin}/>}/>
+        
+        </Router>
       </div> )
     }
   }
@@ -103,8 +109,6 @@ class App extends React.Component {
       // <div style={this.backgroundStyle}>
       // //   <Router>
       // //     <NavBar />
-
-         
       // //     <LogInForm /> 
       // //     <Route 
       //     path="/createtrip" 

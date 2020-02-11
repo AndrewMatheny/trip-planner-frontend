@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 // import { Card } from 'semantic-ui-react'
 
 const TripCard = props => {
@@ -8,11 +9,12 @@ const TripCard = props => {
     <>
     
     <div className="ui column" style={{padding: '1.5rem'}} >
+      <Link to={`/trip/${trip.id}`}>
       <div
         className="ui card raised"
         key={trip.id}
-        onClick={() => props.handleTripClick(trip)}
-        // onClick={() => props.handleClick(trip)}
+        // onClick={() => props.handleTripClick(trip)}
+
       >
         <div className="ui fluid image" >
           <img alt="oh no!" src={trip.image} style={{height: '200px'}} />
@@ -23,6 +25,7 @@ const TripCard = props => {
           <div className="description">{trip.date}</div>
         </div>
       </div>
+      </Link>
     </div>
 
     </>
