@@ -6,9 +6,10 @@ import { Container } from 'semantic-ui-react';
 class TripContainer extends Component{
 
   displayTrips = () => {
-    return this.props.trips.map((trip, id) => {
+    if(this.props.trips.length > 0) {
+      return this.props.trips.map((trip, id) => {
         return <TripCard key={id} trip={trip} />
-    })
+    })}
 }
 
   render() {

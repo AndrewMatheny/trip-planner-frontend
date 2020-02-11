@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Form, Checkbox, Input, Radio, Select, TextArea, Segment, Container, Header } from 'semantic-ui-react'
+import { Button, Form, Input, TextArea, Container, Header } from 'semantic-ui-react'
 
 class CreateTripContainer extends React.Component {
 

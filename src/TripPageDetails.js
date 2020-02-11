@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  Container, Divider, Grid, Header, Image, List, Segment, Icon} from 'semantic-ui-react'
+  Container, Grid, Header, Image, Segment, Icon} from 'semantic-ui-react'
 import PackingListContainer from "./PackingListContainer";
 import StopsContainer from "./StopsContainer";
 
