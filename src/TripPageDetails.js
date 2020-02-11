@@ -28,7 +28,7 @@ class TripPageDetails extends Component {
           </Grid>
         </div>
         <Segment raised style={{margin: '40px'}}>
-              <PackingListContainer items={this.props.trip.items} />
+              <PackingListContainer trip={this.props.trip} items={this.props.trip.items} />
         </Segment>
         <Segment raised style={{margin: '40px'}}>
               <StopsContainer stops={this.props.trip.stops} />

@@ -2,11 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
-import CreateTripContainer from './containers/CreateTripContainer'
+// import CreateTripContainer from './containers/CreateTripContainer'
 import TripPageContainer from './TripPageContainer'
 
 // import SigninContainer from './SigninContainer';
-import TripIndex from './TripIndex';
+// import TripIndex from './TripIndex';
+import CreateItemContainer from './containers/CreateItemContainer'
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
 // import logo from './logo.svg';
@@ -80,14 +81,12 @@ class App extends React.Component {
 
       <NavBar />
 
-
       {/* <LogInForm handleSubmit={this.handleLogin}/>  */}
-      <TripIndex />
+      {/* <TripIndex /> */}
       {/* <SigninContainer /> */}
-        <CreateTripContainer user={this.state.userTrips}/> 
-      {/* <TripContainer /> */}
+        {/* <CreateTripContainer user={this.state.userTrips}/>  */}
+      {/* <CreateItemContainer handleSubmit={this.handleSubmit} /> */}
       <TripPageContainer />
-    
 
 
     </div>
@@ -97,6 +96,9 @@ class App extends React.Component {
 
       <NavBar />
       <LogInForm handleSubmit={this.handleLogin}/> 
+
+      {/* MOVE THIS UP WHEN DONE! */}
+      {/* <CreateItemContainer handleSubmit={this.handleSubmit} />  */}
       </div> )
     }
   }

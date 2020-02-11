@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PackingListDisplay from './PackingListDisplay'
+import CreateItemContainer from './containers/CreateItemContainer'
 
 class PackingListContainer extends Component {
   itemCollection = () => {
@@ -15,6 +16,7 @@ class PackingListContainer extends Component {
       <div>
         <h2>Packing List</h2>
         {this.itemCollection()}
+        <CreateItemContainer trip={this.props.trip}/>
       </div>
     )
   }

@@ -7,14 +7,14 @@ const TripCard = props => {
   return (
     <>
     
-    <div className="ui column">
+    <div className="ui column" style={{padding: '1.5rem'}}>
       <div
         className="ui card raised"
         key={trip.id}
         // onClick={() => props.handleClick(trip)}
       >
-        <div className="ui fluid image">
-          <img alt="oh no!" src={trip.image} />
+        <div className="ui fluid image" >
+          <img alt="oh no!" src={trip.image} style={{height: '200px'}} />
           {/* <img alt="oh no!" src="/images/avatar2/large/elyse.png" /> */}
         </div>
         <div className="content">
@@ -28,5 +28,7 @@ const TripCard = props => {
   );
 
 };
+
+
 
 export default TripCard; 
