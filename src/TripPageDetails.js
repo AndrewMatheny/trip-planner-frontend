@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Container, Grid, Header, Image, Segment, Icon} from 'semantic-ui-react'
+import {Container, Grid, Header, Image, Segment, Icon, Button} from 'semantic-ui-react'
 import PackingListContainer from "./PackingListContainer";
 import StopsContainer from "./StopsContainer";
 import EditTripContainer from './containers/EditTripContainer.js'
