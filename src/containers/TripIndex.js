@@ -17,10 +17,12 @@ class TripIndex extends Component {
       }))
   }
 
+
+
   render() {
     return (
       <div>
-        <TripContainer trips={this.state.trips} />
+        <TripContainer trips={this.state.trips} handleTripClick={this.props.handleTripClick}/>
       </div>
     );
   }
