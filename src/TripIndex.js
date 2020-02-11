@@ -7,12 +7,13 @@ class TripIndex extends Component {
     trips: []
   }
 
+
   componentDidMount() {
-    fetch('http://localhost:3000/trips')
+    fetch(`http://localhost:3000/users/${this.props.user}`)
     .then(resp => resp.json())
     .then(json => 
       this.setState({
-        trips: json
+        trips: json.trips
       }))
   }
 

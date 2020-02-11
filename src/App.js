@@ -1,20 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
 // import CreateTripContainer from './containers/CreateTripContainer'
 import TripPageContainer from './TripPageContainer'
+import TripIndex from './TripIndex';
 
-// import SigninContainer from './SigninContainer';
-// import TripIndex from './TripIndex';
-import CreateItemContainer from './containers/CreateItemContainer'
 
 // import ButtonExampleButton from './Btn.js' //Semantic UI button
 // import logo from './logo.svg';
 // import './App.css';
 import background from './images/background_road.jpg'
-// let background = 'https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg'
-
 
 class App extends React.Component {
 
@@ -35,8 +31,8 @@ class App extends React.Component {
     height: '100vh'
 }
 
-  getTrips = () => {
-    fetch(`http://localhost:3000/users/1`)
+  getTrips = (userId) => {
+    fetch(`http://localhost:3000/users/${userId}`)
     .then(res => res.json())
     .then(data => this.setState({
       userTrips: data
@@ -56,13 +52,12 @@ class App extends React.Component {
       if(user.username === enteredName) {
         this.setState({
           loggedIn: user.id
-        })
+        }, () => this.getTrips(this.state.loggedIn))
       }
     })
   }
 
   handleLogin = (e) => {
-    //   console.log(e.target.tripname.value)
     let userName = e.target.username.value
     this.setState({
       enteredUser: userName
@@ -71,32 +66,25 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getUsers()
-    this.getTrips()
+    // this.getTrips()
     
   }
 
   showPage = () => {
     if(this.state.loggedIn) {
-      return  (<div style={this.backgroundStyle}>
-
-      <NavBar />
-
-      {/* <LogInForm handleSubmit={this.handleLogin}/>  */}
-      {/* <TripIndex /> */}
-      {/* <SigninContainer /> */}
+      return  (
+      <div style={this.backgroundStyle}>
+        <NavBar />
+        <TripIndex user={this.state.loggedIn} userTrips={this.state.userTrips}/>
         <CreateTripContainer user={this.state.userTrips}/> 
-      {/* <TripContainer /> */}
-      <TripPageContainer user={this.state.userTrips}/>
-
-
-
-    </div>
+        <TripPageContainer user={this.state.userTrips}/>
+      </div>
       )
     } else {
-      return (<div style={this.backgroundStyle}>
-
-      <NavBar />
-      <LogInForm handleSubmit={this.handleLogin}/> 
+      return (
+      <div style={this.backgroundStyle}>
+        <NavBar />
+        <LogInForm handleSubmit={this.handleLogin}/> 
       </div> )
     }
   }
@@ -118,22 +106,6 @@ class App extends React.Component {
       //     {/* <TripContainer /> */}
       //     {/* <SigninContainer /> */}
       //   </Router>
-      // </div>
-
-    //----------------------------------------
-      // <div style={this.backgroundStyle}>
-
-      //   <NavBar />
-
-        // <TripPageContainer />
-
-      //   <LogInForm handleSubmit={this.handleLogin}/> 
-      //   <TripIndex />
-      //   {/* <SigninContainer /> */}
-      //     <CreateTripContainer user={this.state.userTrips}/> 
-      //   {/* <TripContainer /> */}
-      //   <TripPageContainer />
-      
       // </div>
     );
   }
