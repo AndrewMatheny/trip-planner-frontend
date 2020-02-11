@@ -3,26 +3,23 @@ import React from "react";
 
 const TripCard = props => {
   const { trip } = props;
-  console.log(props)
 
   return (
     <>
-
+    
     <div className="ui column">
       <div
-        className="ui card"
+        className="ui card raised"
         key={trip.id}
         // onClick={() => props.handleClick(trip)}
       >
-        <div className="image">
+        <div className="ui fluid image">
           <img alt="oh no!" src={trip.image} />
           {/* <img alt="oh no!" src="/images/avatar2/large/elyse.png" /> */}
         </div>
         <div className="content">
-          <div className="header">
-            {trip.name}
-          </div>
-
+          <div className="header">{trip.name}</div>
+          <div className="description">{trip.date}</div>
         </div>
       </div>
     </div>
@@ -32,4 +29,4 @@ const TripCard = props => {
 
 };
 
-export default TripCard;
+export default TripCard; 
