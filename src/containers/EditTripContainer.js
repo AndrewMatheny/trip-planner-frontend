@@ -21,7 +21,7 @@ class EditTripContainer extends Component{
   getTripDetails = () => {
 
     let id = this.props.trip
-    console.log(id)
+    // console.log(id)
     fetch(`http://localhost:3000/trips/${id}`)
     .then(res => res.json())
     .then(data =>

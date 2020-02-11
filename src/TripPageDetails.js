@@ -14,7 +14,7 @@ class TripPageDetails extends Component {
           <Grid>
             <Grid.Column width={4}>
               <Image src={this.props.trip.image} />
-              <Button basic color='orange' on>Edit Trip</Button>
+              <Button basic color='orange'>Edit Trip</Button>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h2'>
