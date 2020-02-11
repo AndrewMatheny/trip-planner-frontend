@@ -19,11 +19,16 @@ class TripPageContainer extends Component {
     this.fetchTripDetails();
   }
 
+  updateDetails = (patch) => {
+    this.setState({
+      trip: patch
+    })
+  }
 
   render() {
     return (
       <div>
-        <TripPageDetails trip={this.state.trip}/>
+        <TripPageDetails trip={this.state.trip} updateDetails={this.updateDetails}/>
       </div>
     )
   }
