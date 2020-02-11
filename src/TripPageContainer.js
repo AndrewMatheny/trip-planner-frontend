@@ -23,7 +23,7 @@ class TripPageContainer extends Component {
   render() {
     return (
       <div>
-        <TripPageDetails trip={this.state.trip}/>
+        <TripPageDetails user={this.props.user} trip={this.state.trip}/>
       </div>
     )
   }

@@ -86,7 +86,7 @@ class App extends React.Component {
       {/* <SigninContainer /> */}
         <CreateTripContainer user={this.state.userTrips}/> 
       {/* <TripContainer /> */}
-      <TripPageContainer />
+      <TripPageContainer user={this.state.userTrips}/>
     
 
 

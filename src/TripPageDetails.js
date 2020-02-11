@@ -31,7 +31,7 @@ class TripPageDetails extends Component {
               <PackingListContainer items={this.props.trip.items} />
         </Segment>
         <Segment raised style={{margin: '40px'}}>
-              <StopsContainer stops={this.props.trip.stops} />
+              <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip}/>
         </Segment>
         </Container>
     </div>
