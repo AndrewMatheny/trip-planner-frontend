@@ -19,7 +19,6 @@ class TripIndex extends Component {
   render() {
     return (
       <div>
-        {/* <Navbar /> */}
         <TripContainer trips={this.state.trips} />
       </div>
     );
