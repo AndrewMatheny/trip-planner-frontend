@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import TripContainer from './TripContainer';
+import React, { Component } from 'react'
+import TripContainer from './TripContainer'
 
 class TripIndex extends Component {
 
   state = {
     trips: []
   }
-
 
   componentDidMount() {
     fetch(`http://localhost:3000/users/${this.props.user}`)
@@ -26,4 +25,4 @@ class TripIndex extends Component {
   }
 }
 
-export default TripIndex;
+export default TripIndex

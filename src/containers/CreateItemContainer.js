@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Button, Form, Checkbox, Input, Radio, Select, TextArea, Segment, Container, Header } from 'semantic-ui-react'
 
 class CreateItemContainer extends Component {

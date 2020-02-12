@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import TripCard from '../components/TripCard';
-import { Container } from 'semantic-ui-react';
+import React, { Component } from 'react'
+import TripCard from '../components/TripCard'
+import { Container } from 'semantic-ui-react'
 // import { Card } from 'semantic-ui-react'
 
 class TripContainer extends Component{
@@ -25,4 +25,4 @@ class TripContainer extends Component{
   }
 }
 
-export default TripContainer;
+export default TripContainer
