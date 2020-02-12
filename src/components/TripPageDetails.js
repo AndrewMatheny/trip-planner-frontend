@@ -28,7 +28,7 @@ class TripPageDetails extends Component {
             </Grid.Column>
           </Grid>
         <Segment raised style={{margin: '40px'}}>
-          {console.log(this.props.trip)}
+          {/* {console.log(this.props.trip)} */}
           <EditTripContainer trip={this.props.trip} updateDetails={this.props.updateDetails} handleEditInput={this.props.handleEditInput} formData={this.props.formData} />
         </Segment>
         </div>

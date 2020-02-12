@@ -64,7 +64,7 @@ class TripPageContainer extends Component {
   render() {
     return (
       <div>
-        {console.log(this.state.trip)}
+        {/* {console.log(this.state.trip)} */}
         <TripPageDetails user={this.props.user} trip={this.state.trip} updateDetails={this.updateDetails} handleEditInput={this.handleEditInput} formData={this.state} updateItems={this.updateItems} updateStops={this.updateStops}/>
       </div>
     )
