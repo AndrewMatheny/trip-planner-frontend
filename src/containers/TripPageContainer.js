@@ -39,6 +39,22 @@ class TripPageContainer extends Component {
     })
   }
 
+  updateItems = (itemObj) => {
+    let newItems = this.state.trip
+    newItems.items.push(itemObj)
+    this.setState({
+      trip: newItems
+    })
+  }
+
+  updateStops = (stopObj) => {
+    let newStops = this.state.trip
+    newStops.stops.push(stopObj)
+    this.setState({
+      trip: newStops
+    })
+  }
+
   handleEditInput = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -49,7 +65,7 @@ class TripPageContainer extends Component {
     return (
       <div>
         {console.log(this.state.trip)}
-        <TripPageDetails user={this.props.user} trip={this.state.trip} updateDetails={this.updateDetails} handleEditInput={this.handleEditInput} formData={this.state}/>
+        <TripPageDetails user={this.props.user} trip={this.state.trip} updateDetails={this.updateDetails} handleEditInput={this.handleEditInput} formData={this.state} updateItems={this.updateItems} updateStops={this.updateStops}/>
       </div>
     )
   }

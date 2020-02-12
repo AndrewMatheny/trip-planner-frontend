@@ -29,14 +29,14 @@ class TripPageDetails extends Component {
           </Grid>
         <Segment raised style={{margin: '40px'}}>
           {console.log(this.props.trip)}
-          <EditTripContainer trip={this.props.trip} updateDetails={this.props.updateDetails} handleEditInput={this.props.handleEditInput} formData={this.props.formData}/>
+          <EditTripContainer trip={this.props.trip} updateDetails={this.props.updateDetails} handleEditInput={this.props.handleEditInput} formData={this.props.formData} />
         </Segment>
         </div>
         <Segment raised style={{margin: '40px'}}>
-              <PackingListContainer trip={this.props.trip} items={this.props.trip.items} />
+              <PackingListContainer trip={this.props.trip} items={this.props.trip.items} updateItems={this.props.updateItems}/>
         </Segment>
         <Segment raised style={{margin: '40px'}}>
-              <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip}/>
+              <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops}/>
         </Segment>
         </Container>
     </div>
