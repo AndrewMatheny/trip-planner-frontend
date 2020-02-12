@@ -8,7 +8,7 @@ class TripContainer extends Component{
   displayTrips = () => {
     if(this.props.trips.length > 0) {
       return this.props.trips.map((trip, id) => {
-        return <TripCard key={id} trip={trip} handleTripClick={this.props.handleTripClick}/>
+        return <TripCard key={id} trip={trip} handleTripClick={this.props.handleTripClick} handleDelete={this.props.handleDelete}/>
     })}
 }
 

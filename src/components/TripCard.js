@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-// import { Card } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
+import '../TripCard.css';
 
 const TripCard = props => {
   const { trip } = props
@@ -20,6 +21,10 @@ const TripCard = props => {
             <div className="content">
           <div className="header">{trip.name}</div>
          <div className="description">{trip.date}</div>
+        <div className="trash-div">
+          <Icon link name='trash alternate outline'
+          onClick={() => this.props.handleDelete(trip)}  />
+        </div>
         </div>
        </div>
        
