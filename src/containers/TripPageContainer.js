@@ -8,7 +8,9 @@ class TripPageContainer extends Component {
   }
   
   fetchTripDetails = () => {
-    fetch('http://localhost:3000/trips/1')
+    let tripId = this.props.selectedTrip.id
+    console.log(tripId)
+    fetch(`http://localhost:3000/trips/${tripId}`)
     .then(res => res.json())
     .then(data => this.setState({
       trip: data

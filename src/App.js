@@ -7,6 +7,8 @@ import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
 import background from './images/background_road.jpg'
 
+// let currentUser = localStorage.getItem('currentUser')
+
 class App extends React.Component {
 
   state = {
@@ -31,7 +33,24 @@ class App extends React.Component {
     .then(res => res.json())
     .then(data => this.setState({
       userTrips: data
-    }))
+    }, () => this.setLocalUser(userId)))
+  }
+
+  setLocalUser = (id) => {
+    localStorage.setItem('currentUser', `${id}`)
+  }
+
+  logoutUser = () => {
+    localStorage.clear()
+    this.setState({
+      userTrips: null,
+      allUsers: [],
+      selectedTrip: "",
+      selected: false,
+      isLoaded: false,
+      loggedIn: false,
+      enteredUser: ""
+    })
   }
 
   getUsers = () => {
@@ -78,11 +97,13 @@ class App extends React.Component {
       return  (
       <div style={this.backgroundStyle}>
         <Router>
-          <NavBar />
-          <TripIndex user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>
+          <NavBar logout={this.logoutUser}/>
+          <Route 
+            path="/"
+            render={props => <TripIndex {...props} user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>}/>
           <Route 
             path="/trip/:id"
-            render={props => <TripPageContainer {...props} user={this.state.userTrips}/>}/>
+            render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
           {/* <CreateTripContainer user={this.state.userTrips}/>  */}
           {/* <TripPageContainer user={this.state.userTrips}/> */}
         </Router>
@@ -92,7 +113,7 @@ class App extends React.Component {
       return (
       <div style={this.backgroundStyle}>
         <Router>
-          <NavBar />
+          <NavBar logout={this.logoutUser}/>
         <Route 
         path="/"
         exact

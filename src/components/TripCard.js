@@ -13,7 +13,7 @@ const TripCard = props => {
       <div
         className="ui card raised"
         key={trip.id}
-        // onClick={() => props.handleTripClick(trip)}
+        onClick={() => props.handleTripClick(trip)}
 
       >
         <div className="ui fluid image" >

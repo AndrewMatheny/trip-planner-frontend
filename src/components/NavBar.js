@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
+import {Redirect} from 'react-router-dom'
 
 // let background = 'https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg'
 
@@ -11,6 +12,13 @@ export default class NavBar extends Component {
   style = {
 	//   backgroundColor: '#E2A45E'
 	color: "white"
+  }
+
+  handleLogout = () => {
+    this.props.logout()
+      return (
+        <Redirect to="/" />
+      )
   }
 
   render() {
@@ -44,7 +52,7 @@ export default class NavBar extends Component {
 			style={this.style}
               name='logout'
               active={activeItem === 'logout'}
-              onClick={this.handleItemClick}
+              onClick={this.handleLogout}
             />
           </Menu.Menu>
         </Menu>
