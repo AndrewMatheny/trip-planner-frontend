@@ -28,29 +28,22 @@ export default class NavBar extends Component {
       <div style={this.style}>
         <Menu pointing secondary>
           <Menu.Item
-		  	style={this.style}
+		  	    style={this.style}
             name='home'
             active={activeItem === 'home'}
             onClick={this.handleItemClick}
           />
           <Link to="/">
           <Menu.Item
-		  	style={this.style}
+		  	    style={this.style}
             name='trips'
             active={activeItem === 'trips'}
             onClick={this.handleItemClick}
           /></Link>
           
           <Menu.Menu position='right'>
-          <Link to="/createtrip">
-			  <Menu.Item
-			  style={this.style}
-            name='create a trip'
-            active={activeItem === 'create a trip'}
-            onClick={this.handleItemClick}
-          /></Link>
             <Menu.Item
-			style={this.style}
+			        style={this.style}
               name='logout'
               active={activeItem === 'logout'}
               onClick={this.handleLogout}
