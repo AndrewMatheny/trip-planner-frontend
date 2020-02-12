@@ -92,7 +92,17 @@ class App extends React.Component {
     })
   }
 
+  login = () => {
+    if(localStorage.getItem("currentUser")) {
+      let userId = localStorage.getItem("currentUser")
+      this.setState({
+        loggedIn: userId
+      })
+    }
+  }
+
   showPage = () => {
+    // this.login()
     if(this.state.loggedIn) {
       return  (
       <div style={this.backgroundStyle}>
@@ -126,7 +136,9 @@ class App extends React.Component {
 
   render() {
     return (
-      this.showPage()
+      <div>
+      {this.showPage()}
+      </div>
       // <div style={this.backgroundStyle}>
       // //   <Router>
       // //     <NavBar />
