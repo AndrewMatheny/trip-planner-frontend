@@ -92,6 +92,12 @@ class App extends React.Component {
     })
   }
 
+  // addTrip = (trip) => {
+  //   this.setState(prevState => ({
+  //     userTrips: [...prevState, trip]
+  //   }))
+  // }
+
   login = () => {
     if(localStorage.getItem("currentUser")) {
       let userId = localStorage.getItem("currentUser")
@@ -114,7 +120,6 @@ class App extends React.Component {
           <Route 
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
-          {/* <CreateTripContainer user={this.state.userTrips}/>  */}
           {/* <TripPageContainer user={this.state.userTrips}/> */}
         </Router>
       </div>
