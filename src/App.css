@@ -46,5 +46,6 @@
   background-size: cover;
   background-color: transparent;
   height: auto;
-  background-attachment: fixed
+  background-attachment: fixed;
+  padding-bottom: 250px
 }
