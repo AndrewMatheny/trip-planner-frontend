@@ -28,7 +28,7 @@ class CreateStop extends React.Component {
                 
             })
         }).then(res => res.json())
-        .then(console.log)
+        .then(stop => this.props.updateStops(stop))
       }
 
 

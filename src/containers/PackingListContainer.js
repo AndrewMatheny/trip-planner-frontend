@@ -16,7 +16,7 @@ class PackingListContainer extends Component {
       <div>
         <h2>Packing List</h2>
         {this.itemCollection()}
-        <CreateItemContainer trip={this.props.trip}/>
+        <CreateItemContainer trip={this.props.trip} updateDetails={this.props.updateDetails} updateItems={this.props.updateItems}/>
       </div>
     )
   }
