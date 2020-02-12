@@ -120,6 +120,7 @@ class App extends React.Component {
           <NavBar logout={this.logoutUser}/>
           <Route 
             path="/"
+            exact
             render={props => <TripIndex {...props} user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>} />
           <Route 
             path="/trip/:id"
