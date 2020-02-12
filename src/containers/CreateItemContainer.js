@@ -27,7 +27,7 @@ class CreateItemContainer extends Component {
                 trip_id: formData.trip_id
             })
         }).then(res => res.json())
-        .then(console.log)
+        .then(item => this.props.updateItems(item))
       }
 
       render() {

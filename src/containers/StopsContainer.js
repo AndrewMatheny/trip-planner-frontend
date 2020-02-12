@@ -19,7 +19,7 @@ class StopsContainer extends Component {
           {this.stopsCollection()}
         </div>
         <div>
-          <CreateStop user={this.props.user} trip={this.props.trip}/>
+          <CreateStop user={this.props.user} trip={this.props.trip} updateStops={this.props.updateStops}/>
         </div>
       </div>
     )
