@@ -50,9 +50,9 @@ class TripIndex extends Component {
 
   render() {
     return (
-      <div>
-        <TripContainer trips={this.state.trips} handleTripClick={this.props.handleTripClick} handleDelete={this.handleDelete}/>
-        <CreateTripContainer user={this.props.userTrips} addTrip={this.addTrip}/>
+      <div >
+        <TripContainer trips={this.state.trips} handleTripClick={this.props.handleTripClick} handleDelete={this.handleDelete} />
+        <CreateTripContainer user={this.props.userTrips} addTrip={this.addTrip} />
       </div>
     );
   }

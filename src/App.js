@@ -6,6 +6,7 @@ import LogInForm from './components/LogInForm'
 import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
 import background from './images/background_road.jpg'
+import './App.css'
 
 // let currentUser = localStorage.getItem('currentUser')
 
@@ -25,7 +26,9 @@ class App extends React.Component {
     backgroundImage: `url(${background})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    height: '100vh'
+    height: '100vh',
+    backgroundAttachment: 'fixed',
+    
 }
 
   getTrips = (userId) => {
@@ -110,13 +113,15 @@ class App extends React.Component {
   showPage = () => {
     // this.login()
     if(this.state.loggedIn) {
-      return  (
-      <div style={this.backgroundStyle}>
+      return  ( 
+        <div>
+      {/* <div style={this.backgroundStyle}> */}
         <Router>
           <NavBar logout={this.logoutUser}/>
           <Route 
             path="/"
-            render={props => <TripIndex {...props} user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>}/>
+            exact
+            render={props => <TripIndex {...props} user={this.state.loggedIn} userTrips={this.state.userTrips} handleTripClick={this.selectTrip}/>} />
           <Route 
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
@@ -135,13 +140,13 @@ class App extends React.Component {
         render={props => <LogInForm {...props} handleSubmit={this.handleLogin}/>}/>
         
         </Router>
-      </div> )
+        </div> ) 
     }
   }
 
   render() {
     return (
-      <div>
+      <div className="whole-page" >
       {this.showPage()}
       </div>
       // <div style={this.backgroundStyle}>

@@ -1,6 +1,8 @@
-.App {
+/* .App {
   text-align: center;
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +37,14 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.whole-page {
+  background-image: url(../src/images/background_road.jpg);
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-color: transparent;
+  height: auto;
+  background-attachment: fixed
 }
