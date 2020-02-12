@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import TripCard from '../components/TripCard'
-import { Container } from 'semantic-ui-react'
-// import { Card } from 'semantic-ui-react'
+import { Container, Button } from 'semantic-ui-react'
 
 class TripContainer extends Component{
 
@@ -15,6 +14,9 @@ class TripContainer extends Component{
   render() {
     return(
       <Container style={{margin: '40px'}} >
+      <Button color='orange' onClick={() => this.props.handleShowForm()}>
+        Create Trip
+      </Button>
       <div className="ui four column grid">
         <div className="row">
         {this.displayTrips()}
