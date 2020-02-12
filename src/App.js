@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
-import CreateTripContainer from './containers/CreateTripContainer'
+// import CreateTripContainer from './containers/CreateTripContainer'
 import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
 import background from './images/background_road.jpg'
@@ -126,10 +126,6 @@ class App extends React.Component {
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
           {/* <TripPageContainer user={this.state.userTrips}/> */}
-          <Route 
-          path='/createtrip'
-          render={props => 
-          <CreateTripContainer {...props} user={this.props.userTrips} addTrip={this.addTrip} />} />
         </Router>
       </div>
       )
