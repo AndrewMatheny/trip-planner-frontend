@@ -23,7 +23,7 @@ const TripCard = props => {
          <div className="description">{trip.date}</div>
         <div className="trash-div">
           <Icon link name='trash alternate outline'
-          onClick={() => this.props.handleDelete(trip)}  />
+          onClick={() => props.handleDelete(trip)}  />
         </div>
         </div>
        </div>

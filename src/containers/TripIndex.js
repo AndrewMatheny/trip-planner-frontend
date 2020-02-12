@@ -28,18 +28,20 @@ class TripIndex extends Component {
 
   handleDelete = (trip) => {
     fetch(`http://localhost:3000/trips/${trip.id}`, {
-      method: 'DELETE'
-      // headers: {
-      //   "Content-Type": "application/json"
-      // }
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
+    // .then(this.deleteState(trip))
     .then(res => res.json())
+    // .then(console.log)
     .then(trip => this.deleteState(trip))
   }
 
   deleteState = (selectedTrip) => {
     let deleteTrip = this.state.trips.filter(trip => {
-      return trip !== selectedTrip
+      return trip.id !== selectedTrip.id
     })
     this.setState({
       trips: deleteTrip
