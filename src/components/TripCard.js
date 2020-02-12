@@ -7,13 +7,12 @@ const TripCard = props => {
 
   return (
     <div className="ui column" style={{padding: '1.5rem'}}>
-     <div className="ui link cards">
      <Link to={`/trip/${trip.id}`}>
+       <div className="ui link cards">
+     
       <div className="ui card raised"
         key={trip.id}
-        onClick={() => props.handleTripClick(trip)}
-
-      >
+        onClick={() => props.handleTripClick(trip)}>
             <div className="ui fluid image" >
               <img alt="oh no!" src={trip.image} style={{height: '200px'}} />
               {/* <img alt="oh no!" src="/images/avatar2/large/elyse.png" /> */}
@@ -23,6 +22,7 @@ const TripCard = props => {
          <div className="description">{trip.date}</div>
         </div>
        </div>
+       
       </div>
       </Link>
     </div>
