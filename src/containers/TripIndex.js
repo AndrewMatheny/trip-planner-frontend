@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import TripContainer from './TripContainer'
-import CreateTripContainer from '../containers/CreateTripContainer'
 
 class TripIndex extends Component {
 
@@ -52,7 +51,6 @@ class TripIndex extends Component {
     return (
       <div >
         <TripContainer trips={this.state.trips} handleTripClick={this.props.handleTripClick} handleDelete={this.handleDelete} />
-        <CreateTripContainer user={this.props.userTrips} addTrip={this.addTrip} />
       </div>
     );
   }

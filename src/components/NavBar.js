@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 // let background = 'https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg'
 
@@ -33,21 +33,22 @@ export default class NavBar extends Component {
             active={activeItem === 'home'}
             onClick={this.handleItemClick}
           />
+          <Link to="/">
           <Menu.Item
 		  	style={this.style}
             name='trips'
             active={activeItem === 'trips'}
             onClick={this.handleItemClick}
-          />
+          /></Link>
           
           <Menu.Menu position='right'>
-			  
+          <Link to="/createtrip">
 			  <Menu.Item
 			  style={this.style}
             name='create a trip'
             active={activeItem === 'create a trip'}
             onClick={this.handleItemClick}
-          />
+          /></Link>
             <Menu.Item
 			style={this.style}
               name='logout'
