@@ -3,8 +3,19 @@ import {Container, Grid, Header, Image, Segment, Icon, Button} from 'semantic-ui
 import PackingListContainer from "../containers/PackingListContainer";
 import StopsContainer from "../containers/StopsContainer";
 import EditTripContainer from '../containers/EditTripContainer'
+import '../HideForm.css';
 
 class TripPageDetails extends Component {
+
+  state = {
+    show: false
+  }
+
+  handleEditShow = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
+  }
 
   render() {
     return(
@@ -13,8 +24,8 @@ class TripPageDetails extends Component {
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Grid>
             <Grid.Column width={4}>
-              <Image src={this.props.trip.image} />
-              <Button basic color='orange'>Edit Trip</Button>
+              <Image style={{height: '250px'}} src={this.props.trip.image} />
+              <Button basic color='orange' style={{margin: '10px'}} onClick={() => this.handleEditShow()}>Edit Trip</Button>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h2'>
@@ -27,14 +38,18 @@ class TripPageDetails extends Component {
               <p>Notes: {this.props.trip.notes}</p>
             </Grid.Column>
           </Grid>
-        <Segment raised style={{margin: '40px'}}>
-          {console.log(this.props.trip)}
+        {this.state.show ? <Segment raised style={{margin: '40px'}}>
           <EditTripContainer trip={this.props.trip} updateDetails={this.props.updateDetails} handleEditInput={this.props.handleEditInput} formData={this.props.formData}/>
-        </Segment>
+            </Segment> : null
+          }
         </div>
+
+        <div>
         <Segment raised style={{margin: '40px'}}>
               <PackingListContainer trip={this.props.trip} items={this.props.trip.items} />
         </Segment>
+        </div>
+
         <Segment raised style={{margin: '40px'}}>
               <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip}/>
         </Segment>
