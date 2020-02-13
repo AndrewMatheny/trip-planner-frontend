@@ -49,7 +49,6 @@ class App extends React.Component {
     localStorage.clear()
     this.setState({
       userTrips: null,
-      allUsers: [],
       selectedTrip: "",
       selected: false,
       isLoaded: false,
