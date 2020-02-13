@@ -17,17 +17,30 @@ class StopsContainer extends Component {
     }))
   }
 
+  // deleteStop = (stop) => {
+  //   fetch(`http://localhost:3000/stops/${stop.id}`,{
+  //     method: 'DELETE',
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //   .then(res => res.json())
+  //   .then(console.log)
+  //   .then(stop => this.props.removeStopState(stop))
+  //   }
+  
+
   stopsCollection = () => {
     if(this.props.stops) {
       return this.props.stops.map(stop => {
-        return <StopDisplay stop={stop} />
+        return <StopDisplay key={stop.id} stop={stop} deleteStop={this.props.deleteStop} />
       })
     }
   }
 
   render() {
     return(
-      <Container style={{margin: '40px'}} >
+      <Container style={{margin: '10px'}} >
             <h2>Itinerary</h2>
         <div className="ui three column grid">
           <div className="row"> 

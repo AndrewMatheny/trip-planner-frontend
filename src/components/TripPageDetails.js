@@ -49,7 +49,7 @@ class TripPageDetails extends Component {
         </Segment> 
 
         <Segment raised style={{margin: '40px'}}>
-          <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops}/>
+          <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops} deleteStop={this.props.deleteStop}/>
         </Segment>
         </Container>
     </div>
