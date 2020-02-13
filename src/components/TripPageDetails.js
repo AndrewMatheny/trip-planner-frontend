@@ -19,7 +19,7 @@ class TripPageDetails extends Component {
   render() {
     return(
       <div>
-        <Container>
+        <Container style={{opacity: 0.85}}>
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Grid>
             <Grid.Column width={4}>

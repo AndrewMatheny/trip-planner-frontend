@@ -13,8 +13,6 @@ class CreateTripContainer extends React.Component {
       }
 
       handleSubmit = (e) => {
-        //   console.log(e.target.tripname.value)
-        console.log(this.state)
         let formData = {name: this.state.tripname, location: this.state.location, image: this.state.image, category: this.state.triptype, date: this.state.date, notes: this.state.notes, user_id: this.props.user.id}
         fetch(`http://localhost:3000/trips`, {
             method: "POST",
@@ -38,7 +36,7 @@ class CreateTripContainer extends React.Component {
 
       render() {
         return (
-        <Container >
+        <Container style={{opacity: 0.95}}>
         
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Form onSubmit={(e) =>this.handleSubmit(e)}> 

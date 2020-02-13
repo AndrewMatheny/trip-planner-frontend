@@ -5,10 +5,9 @@ import LogInForm from './components/LogInForm'
 // import CreateTripContainer from './containers/CreateTripContainer'
 import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
-import CreateUserForm from './containers/CreateUserForm'
+// import CreateUserForm from './containers/CreateUserForm'
 import background from './images/background_road.jpg'
 import './App.css'
-import logo from './images/Logo.png'
 
 // let currentUser = localStorage.getItem('currentUser')
 
@@ -89,7 +88,6 @@ class App extends React.Component {
   }
 
   selectTrip = (trip) => {
-    console.log(trip)
     this.setState({
       selectedTrip: trip, 
       selected: true
@@ -126,7 +124,6 @@ class App extends React.Component {
           <Route 
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
-          {/* <TripPageContainer user={this.state.userTrips}/> */}
           {/* <CreateUserForm /> */}
         </Router>
       </div>
@@ -151,19 +148,6 @@ class App extends React.Component {
       <div className="whole-page" >
       {this.showPage()}
       </div>
-      // <div style={this.backgroundStyle}>
-      // //   <Router>
-      // //     <NavBar />
-      // //     <LogInForm /> 
-      // //     <Route 
-      //     path="/createtrip" 
-      //     exact 
-      //     render={props => <CreateTripContainer {...props} user={this.state.userTrips}/>}/>
-            
-      //     {/* <TripContainer /> */}
-      //     {/* <SigninContainer /> */}
-      //   </Router>
-      // </div>
     );
   }
 }

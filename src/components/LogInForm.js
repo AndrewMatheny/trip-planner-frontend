@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 // import {Link} from 'react-router-dom'
-import logo from '../images/Logo.png'
+import logo from '../images/LogoGreen.png'
 
 class LoginForm extends React.Component {
 
@@ -20,16 +20,15 @@ class LoginForm extends React.Component {
       <Grid textAlign='center' style={{ height: '80vh' }} verticalAlign='middle'>
         
         <Grid.Column style={{ maxWidth: 450 }}>
-          <img alt="logo" src={logo} style={{ maxWidth: 400}}/>
+          <img alt="logo" src={logo} style={{ maxWidth: 400, opacity: 1}}/>
           <Header as='h2' color='red' textAlign='center'>
-            {/* <Image src='/logo.png' />  */}
             
-            <Segment>
+            <Segment style={{opacity: 0.85}}>
               <h3>Log-in to your account</h3>
             </Segment>
             
           </Header>
-          <Form size='large' onSubmit={(e) => this.props.handleSubmit(e)}>
+          <Form style={{opacity: 0.85}} size='large' onSubmit={(e) => this.props.handleSubmit(e)}>
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='User Name' name="username" onChange={(e) => this.handleChange(e)} />
 

@@ -17,7 +17,6 @@ const TripCard = props => {
             <div className="ui fluid image" >
               <Link to={`/trip/${trip.id}`}>
               <img alt="oh no!" src={trip.image} style={{height: '200px'}} />
-              {/* <img alt="oh no!" src="/images/avatar2/large/elyse.png" /> */}
               </Link>
               </div>
             <div className="content">

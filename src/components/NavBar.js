@@ -10,7 +10,6 @@ export default class NavBar extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   style = {
-	//   backgroundColor: '#E2A45E'
 	color: "white"
   }
 
@@ -50,10 +49,6 @@ export default class NavBar extends Component {
             />
           </Menu.Menu>
         </Menu>
-
-        {/* <Segment> */}
-          {/* <img src='https://www.smartertravel.com/uploads/2017/06/road_trip_tips_hero-1400x500.jpg' style={this.style} /> */}
-        {/* </Segment> */}
       </div>
     )
   }

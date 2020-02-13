@@ -25,7 +25,6 @@ class TripIndex extends Component {
   }
 
   addTrip = (trip) => {
-    console.log(trip)
     let newTrips = this.state.trips
     newTrips.push(trip)
     this.setState({
@@ -40,9 +39,7 @@ class TripIndex extends Component {
         "Content-Type": "application/json"
       }
     })
-    // .then(this.deleteState(trip))
     .then(res => res.json())
-    // .then(console.log)
     .then(trip => this.deleteState(trip))
   }
 

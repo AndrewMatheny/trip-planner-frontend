@@ -6,14 +6,12 @@ class CreateItemContainer extends Component {
     state = {}
     
       handleChange = (e) => {
-        // console.log(e.target)
           this.setState({
               [e.target.name]: e.target.value
           })
       }
 
       handleSubmit = (e) => {
-          // console.log(e.target.itemname.value)
         let formData = {name: this.state.itemname, quantity: this.state.quantity, is_packed: false, trip_id: this.props.trip.id}
         fetch(`http://localhost:3000/items`, {
             method: "POST",
