@@ -8,6 +8,7 @@ import TripIndex from './containers/TripIndex';
 import CreateUserForm from './containers/CreateUserForm'
 import background from './images/background_road.jpg'
 import './App.css'
+import logo from './images/Logo.png'
 
 // let currentUser = localStorage.getItem('currentUser')
 
