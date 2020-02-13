@@ -7,6 +7,7 @@ import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
 import background from './images/background_road.jpg'
 import './App.css'
+import logo from './images/Logo.png'
 
 // let currentUser = localStorage.getItem('currentUser')
 

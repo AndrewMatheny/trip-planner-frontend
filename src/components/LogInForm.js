@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 // import {Link} from 'react-router-dom'
+import logo from '../images/Logo.png'
 
 class LoginForm extends React.Component {
 
@@ -17,9 +18,12 @@ class LoginForm extends React.Component {
   render() {
     return (
       <Grid textAlign='center' style={{ height: '80vh' }} verticalAlign='middle'>
+        
         <Grid.Column style={{ maxWidth: 450 }}>
+          <img alt="logo" src={logo} style={{ maxWidth: 400}}/>
           <Header as='h2' color='red' textAlign='center'>
             {/* <Image src='/logo.png' />  */}
+            
             <Segment>
               <h3>Log-in to your account</h3>
             </Segment>
