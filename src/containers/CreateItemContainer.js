@@ -36,7 +36,7 @@ class CreateItemContainer extends Component {
         
         <div className="ui raised segment" style={{margin: '40px'}} >
           <Form onSubmit={(e) => this.handleSubmit(e)}> 
-              <Header textAlign='center'>Create an Item</Header>
+              <Header textAlign='center'>Add Item</Header>
               
             <Form.Group widths='equal'>
               <Form.Field

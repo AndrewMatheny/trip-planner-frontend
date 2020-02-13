@@ -3,7 +3,6 @@ import {Container, Grid, Header, Image, Segment, Icon, Button} from 'semantic-ui
 import PackingListContainer from "../containers/PackingListContainer";
 import StopsContainer from "../containers/StopsContainer";
 import EditTripContainer from '../containers/EditTripContainer'
-import '../HideForm.css';
 
 class TripPageDetails extends Component {
 
@@ -24,8 +23,8 @@ class TripPageDetails extends Component {
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Grid>
             <Grid.Column width={4}>
-              <Image style={{height: '250px'}} src={this.props.trip.image} />
-              <Button basic color='orange' style={{margin: '10px'}} onClick={() => this.handleEditShow()}>Edit Trip</Button>
+              <Image style={{height: '200px'}} src={this.props.trip.image} />
+              <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.handleEditShow()}>Edit Trip</Button>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h2'>
@@ -38,20 +37,19 @@ class TripPageDetails extends Component {
               <p>Notes: {this.props.trip.notes}</p>
             </Grid.Column>
           </Grid>
-        {this.state.show ? <Segment raised style={{margin: '40px'}}>
+        {this.state.show ? 
+        <Segment raised style={{margin: '40px'}}>
           <EditTripContainer trip={this.props.trip} updateDetails={this.props.updateDetails} handleEditInput={this.props.handleEditInput} formData={this.props.formData}/>
-            </Segment> : null
-          }
-        </div>
-
-        <div>
-        <Segment raised style={{margin: '40px'}}>
-              <PackingListContainer trip={this.props.trip} items={this.props.trip.items} updateItems={this.props.updateItems}/>
-        </Segment>
+        </Segment> : null
+        }
         </div>
 
         <Segment raised style={{margin: '40px'}}>
-              <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops}/>
+          <PackingListContainer trip={this.props.trip} items={this.props.trip.items} updateItems={this.props.updateItems}/>
+        </Segment> 
+
+        <Segment raised style={{margin: '40px'}}>
+          <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops}/>
         </Segment>
         </Container>
     </div>
