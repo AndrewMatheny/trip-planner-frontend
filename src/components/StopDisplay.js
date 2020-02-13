@@ -10,7 +10,7 @@ class StopDisplay extends Component {
           <Card.Header>{this.props.stop.name}</Card.Header>
         <Card.Description>
         Location: {this.props.stop.location}<br></br>
-        Date: {this.props.stop.location}<br></br>
+        Date: {this.props.stop.date}<br></br>
         Notes: {this.props.stop.notes}
         </Card.Description>
         </Card.Content>
