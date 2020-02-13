@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm'
 // import CreateTripContainer from './containers/CreateTripContainer'
@@ -82,6 +82,13 @@ class App extends React.Component {
     }, () => this.matchUser(this.state.enteredUser))
   }
 
+  handleCreate = (user) => {
+    // this.getTrips(user.id)
+    // thisUser = this.state.userTrips
+    return <Redirect to="/"
+    /> 
+  }
+
   componentDidMount() {
     this.getUsers()
     // this.getTrips()
@@ -127,7 +134,7 @@ class App extends React.Component {
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
           {/* <TripPageContainer user={this.state.userTrips}/> */}
-          <CreateUserForm />
+          {/* <CreateUserForm handleCreate={this.handleCreate} /> */}
         </Router>
       </div>
       )
@@ -139,7 +146,8 @@ class App extends React.Component {
         <Route 
         path="/"
         exact
-        render={props => <LogInForm {...props} handleSubmit={this.handleLogin}/>}/>
+        render={props => <LogInForm {...props} handleSubmit={this.handleLogin}/> }/>
+        <CreateUserForm handleCreate={this.handleCreate} />
         
         </Router>
         </div> ) 

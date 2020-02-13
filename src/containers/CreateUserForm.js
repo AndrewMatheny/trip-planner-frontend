@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Button, Form, Input, Container, Header } from 'semantic-ui-react'
 
-class CreateUserForm extends React.Component {
+class CreateUserForm extends Component {
    
     state = {}
     
@@ -11,34 +11,36 @@ class CreateUserForm extends React.Component {
           })
       }
 
-      handleSubmit = (e) => {
-        let formData = {name: this.state.username}
+      handleSubmit = () => {
+        let formData = {username: this.state.username}
         fetch(`http://localhost:3000/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name: formData.username
+                username: formData.username
             })
         }).then(res => res.json())
-        .then(user => this.props.addUser(user))
+        .then(user => window.location.reload())
       }
 
       render() {
         return (
         <Container >
         <div className="ui raised segment" style={{margin: '40px'}}>
-          <Form onSubmit={(e) =>this.handleSubmit(e)}> 
+          <Form onSubmit={() => this.handleSubmit()}> 
               <Header textAlign='center'>Create an Account</Header>
               
             <Form.Group widths='equal'>
               <Form.Field
                 control={Input}
+                fluid icon='user'
+                iconPosition='left' 
                 name="username"
-                label='User Name'
-                placeholder='User Name'
-                onChange={this.handleChange}
+                label='Username'
+                placeholder='Username'
+                onChange={(e) => this.handleChange(e)}
               />
             </Form.Group>
            
