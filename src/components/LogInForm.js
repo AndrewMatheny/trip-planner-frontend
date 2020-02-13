@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 // import {Link} from 'react-router-dom'
-import logo from '../images/LogoGreen.png'
+import logo from '../images/FinalLogo.png'
 
 class LoginForm extends React.Component {
 
