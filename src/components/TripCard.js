@@ -11,7 +11,7 @@ const TripCard = props => {
      
        <div className="ui link cards">
      
-      <div className="ui card raised"
+      <div className="ui green card raised"
         key={trip.id}
         onClick={() => props.handleTripClick(trip)}>
             <div className="ui fluid image" style={{height: '200px'}} >
@@ -24,7 +24,7 @@ const TripCard = props => {
           <div className="header">{trip.name}</div>
          <div className="description">{trip.date}</div>
         <div className="trash-div">
-          <Icon link name='trash alternate outline'
+          <Icon link name='trash alternate outline' size='large'
           onClick={() => props.handleDelete(trip)}  />
         </div>
         </div>
