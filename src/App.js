@@ -5,7 +5,7 @@ import LogInForm from './components/LogInForm'
 // import CreateTripContainer from './containers/CreateTripContainer'
 import TripPageContainer from './containers/TripPageContainer'
 import TripIndex from './containers/TripIndex';
-// import CreateUserForm from './containers/CreateUserForm'
+import CreateUserForm from './containers/CreateUserForm'
 import background from './images/background_road.jpg'
 import './App.css'
 
