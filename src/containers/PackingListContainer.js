@@ -19,7 +19,7 @@ class PackingListContainer extends Component {
   itemCollection = () => {
     if(this.props.items) {
       return this.props.items.map(item => {
-        return <PackingListDisplay item={item} />
+        return <PackingListDisplay item={item} key={item.id}/>
       })
     }
   }

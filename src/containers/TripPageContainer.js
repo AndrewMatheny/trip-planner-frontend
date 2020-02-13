@@ -60,10 +60,44 @@ class TripPageContainer extends Component {
     })
   }
 
+
+  deleteStop = (stop) => {
+    fetch(`http://localhost:3000/stops/${stop.id}`,{
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.json())
+    // .then(console.log)
+    .then(stop => this.removeStopState(stop))
+    }
+  
+
+  removeStopState = (selectedStop) => {
+    let stop = this.state.trip.stops.filter(stop => {
+      return stop.id !== selectedStop.id
+    })
+    let currentTrip = this.state.trip
+    currentTrip.stops = stop
+    this.setState({
+      trip: currentTrip
+    }, () => console.log(this.state))
+
+  }
+
   render() {
     return (
       <div>
-        <TripPageDetails user={this.props.user} trip={this.state.trip} updateDetails={this.updateDetails} handleEditInput={this.handleEditInput} formData={this.state} updateItems={this.updateItems} updateStops={this.updateStops}/>
+        <TripPageDetails 
+        user={this.props.user} 
+        trip={this.state.trip} 
+        updateDetails={this.updateDetails} 
+        handleEditInput={this.handleEditInput} 
+        formData={this.state} 
+        updateItems={this.updateItems} 
+        updateStops={this.updateStops}
+        deleteStop={this.deleteStop}/>
       </div>
     )
   }
