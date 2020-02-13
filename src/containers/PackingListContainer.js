@@ -15,6 +15,7 @@ class PackingListContainer extends Component {
     }))
   }
 
+
   itemCollection = () => {
     if(this.props.items) {
       return this.props.items.map(item => {
