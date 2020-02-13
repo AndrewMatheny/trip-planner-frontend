@@ -5,7 +5,14 @@ import CreateTripContainer from './CreateTripContainer'
 class TripIndex extends Component {
 
   state = {
-    trips: []
+    trips: [],
+    show: false
+  }
+
+  handleShowForm = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
   }
 
   componentDidMount() {
@@ -51,8 +58,9 @@ class TripIndex extends Component {
   render() {
     return (
       <div >
-        <TripContainer trips={this.state.trips} handleTripClick={this.props.handleTripClick} handleDelete={this.handleDelete} />
-        <CreateTripContainer user={this.props.userTrips} addTrip={this.addTrip} />} />
+        {this.state.show ? 
+        <CreateTripContainer user={this.props.userTrips} addTrip={this.addTrip} /> : null}
+        <TripContainer trips={this.state.trips} handleTripClick={this.props.handleTripClick} handleDelete={this.handleDelete} handleShowForm={this.handleShowForm} />
       </div>
     );
   }
