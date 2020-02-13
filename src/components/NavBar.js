@@ -26,12 +26,12 @@ export default class NavBar extends Component {
     return (
       <div style={this.style}>
         <Menu pointing secondary>
-          <Menu.Item
+          {/* <Menu.Item
 		  	    style={this.style}
             name='home'
             active={activeItem === 'home'}
             onClick={this.handleItemClick}
-          />
+          /> */}
           <Link to="/">
           <Menu.Item
 		  	    style={this.style}

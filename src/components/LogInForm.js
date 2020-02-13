@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
             </Segment>
             
           </Header>
-          <Form style={{opacity: 0.85}} size='large' onSubmit={(e) => this.props.handleSubmit(e)}>
+          <Form style={{opacity: 0.9}} size='large' onSubmit={(e) => this.props.handleSubmit(e)}>
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='User Name' name="username" onChange={(e) => this.handleChange(e)} />
 
