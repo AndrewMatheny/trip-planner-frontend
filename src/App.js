@@ -127,7 +127,7 @@ class App extends React.Component {
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
           {/* <TripPageContainer user={this.state.userTrips}/> */}
-          {/* <CreateUserForm /> */}
+          <CreateUserForm />
         </Router>
       </div>
       )

@@ -1,7 +1,29 @@
 import React from 'react'
-import { Button, Form, Input, TextArea, Container, Header } from 'semantic-ui-react'
+import { Button, Form, Input, Container, Header } from 'semantic-ui-react'
 
 class CreateUserForm extends React.Component {
+   
+    state = {}
+    
+      handleChange = (e) => {
+          this.setState({
+              [e.target.name]: e.target.value
+          })
+      }
+
+      handleSubmit = (e) => {
+        let formData = {name: this.state.username}
+        fetch(`http://localhost:3000/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: formData.username
+            })
+        }).then(res => res.json())
+        .then(user => this.props.addUser(user))
+      }
 
       render() {
         return (
@@ -16,13 +38,6 @@ class CreateUserForm extends React.Component {
                 name="username"
                 label='User Name'
                 placeholder='User Name'
-                onChange={this.handleChange}
-              />
-              <Form.Field
-                control={Input}
-                name="password"
-                label='Password'
-                placeholder='Password'
                 onChange={this.handleChange}
               />
             </Form.Group>

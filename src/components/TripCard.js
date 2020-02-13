@@ -14,9 +14,9 @@ const TripCard = props => {
       <div className="ui card raised"
         key={trip.id}
         onClick={() => props.handleTripClick(trip)}>
-            <div className="ui fluid image" >
+            <div className="ui fluid image" style={{height: '200px'}} >
               <Link to={`/trip/${trip.id}`}>
-              <img alt="oh no!" src={trip.image} style={{height: '200px'}} />
+              <img alt="oh no!" src={trip.image} />
               {/* <img alt="oh no!" src="/images/avatar2/large/elyse.png" /> */}
               </Link>
               </div>
