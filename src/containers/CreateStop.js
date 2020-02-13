@@ -38,7 +38,7 @@ class CreateStop extends React.Component {
         
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Form onSubmit={(e) =>this.handleSubmit(e)}> 
-              <Header textAlign='center'>Create a Stop</Header>
+              <Header textAlign='center'>Add Stop</Header>
               
             <Form.Group widths='equal'>
               <Form.Field

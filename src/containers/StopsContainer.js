@@ -1,8 +1,21 @@
 import React, { Component } from "react";
+import { Button } from 'semantic-ui-react'
 import StopDisplay from '../components/StopDisplay'
 import CreateStop from './CreateStop'
 
+
 class StopsContainer extends Component {
+
+  state = {
+    show: false
+  }
+
+  handleEditShow = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
+  }
+
   stopsCollection = () => {
     if(this.props.stops) {
       return this.props.stops.map(stop => {
@@ -13,15 +26,16 @@ class StopsContainer extends Component {
 
   render() {
     return(
-      <div>
-        <div>
-          <h2>Itinerary</h2>
-          {this.stopsCollection()}
-        </div>
-        <div>
-          <CreateStop user={this.props.user} trip={this.props.trip} updateStops={this.props.updateStops}/>
-        </div>
-      </div>
+
+    <div>
+      <h2>Itinerary</h2>
+      {this.stopsCollection()}
+      <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.handleEditShow()}>Add Stop</Button>
+    
+      {this.state.show ? 
+        <CreateStop user={this.props.user} trip={this.props.trip} updateStops={this.props.updateStops}/> : null
+      }
+    </div>
     )
   }
 }
