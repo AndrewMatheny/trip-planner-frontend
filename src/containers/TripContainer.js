@@ -14,7 +14,7 @@ class TripContainer extends Component{
   render() {
     return(
       <Container style={{margin: '40px'}} >
-      <Button color='orange' onClick={() => this.props.handleShowForm()}>
+      <Button color='orange' style={{margin: '0 0 0 0.5rem'}} onClick={() => this.props.handleShowForm()}>
         Create Trip
       </Button>
       <div className="ui four column grid">
