@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from 'semantic-ui-react'
 import StopDisplay from '../components/StopDisplay'
 import CreateStop from './CreateStop'
+import { Container } from 'semantic-ui-react'
 
 
 class StopsContainer extends Component {
@@ -26,16 +27,20 @@ class StopsContainer extends Component {
 
   render() {
     return(
-
-    <div>
-      <h2>Itinerary</h2>
-      {this.stopsCollection()}
-      <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.handleEditShow()}>Add Stop</Button>
-    
-      {this.state.show ? 
+      <Container style={{margin: '40px'}} >
+            <h2>Itinerary</h2>
+        <div className="ui three column grid">
+          <div className="row"> 
+              {this.stopsCollection()}
+          </div>
+        </div>
+        <div>
+        <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.handleEditShow()}>Add Stop</Button>
+        {this.state.show ? 
         <CreateStop user={this.props.user} trip={this.props.trip} updateStops={this.props.updateStops}/> : null
-      }
-    </div>
+        }
+        </div>
+      </Container>
     )
   }
 }
