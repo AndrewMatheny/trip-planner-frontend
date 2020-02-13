@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Icon } from 'semantic-ui-react'
 import '../TripCard.css'
 
@@ -9,16 +9,15 @@ const TripCard = props => {
   return (
     <div className="ui column" style={{padding: '1.5rem'}}>
        <div className="ui link cards">
-          <div className="ui green card raised"
+          <div className="ui card raised" style={{opacity: '0.85'}}
             key={trip.id}
             onClick={() => props.handleTripClick(trip)}>
               <div className="ui fluid image" >
               <Link to={`/trip/${trip.id}`}>
               <img alt="oh no!" src={trip.image} style={{height: '200px', borderRadius: '4px'}} />
-              {/* <img alt="oh no!" src="/images/avatar2/large/elyse.png" /> */}
               </Link>
               </div>
-              <div className="content">
+              <div className="content" style={{ opacity: '1' }}>
                 <div className="header">{trip.name}</div>
                 <div className="description">{trip.date}</div>
                 <div className="trash-div">
