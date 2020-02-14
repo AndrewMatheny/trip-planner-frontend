@@ -78,9 +78,9 @@ class TripPageContainer extends Component {
     }))
   }
 
-  handleAddStopShow = () => {
+  handleAddShowStop = () => {
     this.setState(prevState => ({
-      showStop: !prevState.stopShow
+      showStop: !prevState.showStop
     }))
   }
 
@@ -152,7 +152,7 @@ class TripPageContainer extends Component {
         itemShow={this.state.itemShow}
         handleAddItemShow={this.handleAddItemShow}
         showStop={this.state.showStop}
-        handleAddStopShow={this.handleAddStopShow}
+        handleAddShowStop={this.handleAddShowStop}
         />
       </div>
     )

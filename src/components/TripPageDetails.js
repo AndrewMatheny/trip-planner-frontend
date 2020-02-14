@@ -21,9 +21,9 @@ class TripPageDetails extends Component {
                 <Header.Content>{this.props.trip.name}</Header.Content>
               </Header>
               <Header as='h4'>Trip Type: {this.props.trip.category}</Header>
-              <p>Location: {this.props.trip.location}</p>
-              <p>Date: {this.props.trip.date}</p>
-              <p>Notes: {this.props.trip.notes}</p>
+              <Header as='h4'>Location: {this.props.trip.location}</Header>
+              <Header as='h4'>Date: {this.props.trip.date}</Header>
+              <Header as='h4'>Notes: {this.props.trip.notes}</Header>
             </Grid.Column>
           </Grid>
         {this.props.show ? 
@@ -38,7 +38,7 @@ class TripPageDetails extends Component {
         </Segment> 
 
         <Segment raised style={{margin: '40px'}}>
-          <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops} deleteStop={this.props.deleteStop} showStop={this.props.showStop} handleAddStopShow={this.props.handleAddStopShow}/>
+          <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops} deleteStop={this.props.deleteStop} showStop={this.props.showStop} handleAddShowStop={this.props.handleAddShowStop}/>
         </Segment>
         </Container>
     )

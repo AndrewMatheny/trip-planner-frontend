@@ -48,7 +48,7 @@ class StopsContainer extends Component {
           </div>
         </div>
         <div>
-        <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.props.handleAddStopShow()}>Add Stop</Button>
+        <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.props.handleAddShowStop()}>Add Stop</Button>
         {this.props.showStop ? 
         <CreateStop user={this.props.user} trip={this.props.trip} updateStops={this.props.updateStops}/> : null
         }
