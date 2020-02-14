@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Checkbox } from "semantic-ui-react";
+import { Checkbox, Icon, Card } from "semantic-ui-react";
+import '../PackingListDisplay.css'
 
 class PackingListDisplay extends Component {
 
@@ -46,13 +47,27 @@ class PackingListDisplay extends Component {
 
   render() {
     return(
-      <div>
+        // <Grid>
+        //   <Grid.Row>
+        //   <Grid.Column width={8}>
+        <div className="ui column" style={{padding: '1.5rem'}}>
+        <Card raised style={{height: '85px'}} >
+          <Card.Content>
+        <Card.Header>
         <Checkbox 
         label={this.props.item.name}
         checked={this.state.check}
         onClick={() => this.handleCheckPatch()}/>
-        <p>Quantity: {this.props.item.quantity}</p>
-      </div>
+        </Card.Header>
+        <Card.Description className='quantity'>Quantity: {this.props.item.quantity}</Card.Description>
+        <div style={{textAlign: 'right'}}>
+              <Icon link name='x' 
+              size='large'
+              onClick={() => this.props.deleteItem(this.props.item)}/>
+        </div>
+        </Card.Content>
+          </Card>
+        </div>
     )
   }
 }

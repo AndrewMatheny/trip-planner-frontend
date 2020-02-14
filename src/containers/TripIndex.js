@@ -27,9 +27,10 @@ class TripIndex extends Component {
   addTrip = (trip) => {
     let newTrips = this.state.trips
     newTrips.push(trip)
-    this.setState({
-      trips: newTrips
-    })
+    this.setState(prevState => ({
+      trips: newTrips,
+      show: !prevState.show
+    }))
   }
 
   handleDelete = (trip) => {
