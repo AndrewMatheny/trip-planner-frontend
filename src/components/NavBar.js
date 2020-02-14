@@ -42,12 +42,13 @@ export default class NavBar extends Component {
           /></Link>
           
           <Menu.Menu position='right'>
+            <Link to="/">
             <Menu.Item
 			        style={this.style}
               name='logout'
               active={activeItem === 'logout'}
               onClick={this.handleLogout}
-            />
+            /></Link>
           </Menu.Menu>
         </Menu>
       </div>
