@@ -10,7 +10,8 @@ export default class NavBar extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   style = {
-	color: "white"
+  color: "white",
+  fontSize: "1.25em"
   }
 
   handleLogout = () => {

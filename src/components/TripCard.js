@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Link } from 'react-router-dom'
 import { Icon } from 'semantic-ui-react'
 import '../TripCard.css'
@@ -9,7 +9,7 @@ const TripCard = props => {
   return (
     <div className="ui column" style={{padding: '1.5rem'}}>
        <div className="ui link cards">
-          <div className="ui card raised" style={{opacity: '0.85'}}
+          <div className="ui card raised" style={{opacity: 0.9}}
             key={trip.id}
             onClick={() => props.handleTripClick(trip)}>
               <div className="ui fluid image" >
@@ -17,7 +17,7 @@ const TripCard = props => {
               <img alt="oh no!" src={trip.image} style={{height: '200px', borderRadius: '4px'}} />
               </Link>
               </div>
-              <div className="content" style={{ opacity: '1' }}>
+              <div className="content" style={{opacity: '1'}}>
                 <div className="header">{trip.name}</div>
                 <div className="description">{trip.date}</div>
                 <div className="trash-div">

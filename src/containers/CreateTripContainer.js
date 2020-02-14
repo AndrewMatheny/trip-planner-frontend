@@ -36,9 +36,9 @@ class CreateTripContainer extends React.Component {
 
       render() {
         return (
-        <Container style={{opacity: 0.95}}>
+        <Container style={{opacity: 0.9}}>
         
-        <div className="ui raised segment" style={{margin: '40px'}}>
+        <div className="ui raised segment" style={{margin: '40px', padding: '3rem'}}>
           <Form onSubmit={(e) =>this.handleSubmit(e)}> 
               <Header textAlign='center'>Create a Trip</Header>
               
