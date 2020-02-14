@@ -10,7 +10,10 @@ class TripPageContainer extends Component {
     image: "",
     category: "",
     date: "",
-    notes: ""
+    notes: "",
+    show: false,
+    itemShow: false,
+    showStop: false
   }
   
   fetchTripDetails = () => {
@@ -33,31 +36,52 @@ class TripPageContainer extends Component {
   }
 
   updateDetails = (patch) => {
-    this.setState({
-      trip: patch
-    })
+    this.setState(prevState => ({
+      trip: patch,
+      show: !prevState.show
+    }))
   }
 
   updateItems = (itemObj) => {
     let newItems = this.state.trip
     newItems.items.push(itemObj)
-    this.setState({
-      trip: newItems
-    })
+    this.setState(prevState => ({
+      trip: newItems,
+      itemShow: !prevState.itemShow
+    }))
   }
 
   updateStops = (stopObj) => {
     let newStops = this.state.trip
     newStops.stops.push(stopObj)
-    this.setState({
-      trip: newStops
-    })
+    this.setState(prevState => ({
+      trip: newStops,
+      showStop: !prevState.showStop
+    }))
   }
 
   handleEditInput = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  handleEditShow = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
+  }
+
+  handleAddItemShow = () => {
+    this.setState(prevState => ({
+      itemShow: !prevState.itemShow
+    }))
+  }
+
+  handleAddStopShow = () => {
+    this.setState(prevState => ({
+      showStop: !prevState.stopShow
+    }))
   }
 
 
@@ -82,6 +106,30 @@ class TripPageContainer extends Component {
     currentTrip.stops = stop
     this.setState({
       trip: currentTrip
+    })
+
+  }
+
+  deleteItem = (item) => {
+    fetch(`http://localhost:3000/items/${item.id}`,{
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.json())
+    // .then(console.log)
+    .then(item => this.removeItemState(item))
+    }
+
+  removeItemState = (selectedItem) => {
+    let item = this.state.trip.items.filter(item => {
+      return item.id !== selectedItem.id
+    })
+    let currentTrip = this.state.trip
+    currentTrip.items = item
+    this.setState({
+      trip: currentTrip
     }, () => console.log(this.state))
 
   }
@@ -97,7 +145,15 @@ class TripPageContainer extends Component {
         formData={this.state} 
         updateItems={this.updateItems} 
         updateStops={this.updateStops}
-        deleteStop={this.deleteStop}/>
+        deleteStop={this.deleteStop}
+        deleteItem={this.deleteItem}
+        handleEditShow={this.handleEditShow}
+        show={this.state.show}
+        itemShow={this.state.itemShow}
+        handleAddItemShow={this.handleAddItemShow}
+        showStop={this.state.showStop}
+        handleAddStopShow={this.handleAddStopShow}
+        />
       </div>
     )
   }
