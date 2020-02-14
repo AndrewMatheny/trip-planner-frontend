@@ -21,7 +21,7 @@ class TripPageDetails extends Component {
                 <Icon name='sun' />
                 <Header.Content>{this.props.trip.name}</Header.Content>
               </Header>
-              <p>Trip Type: {this.props.trip.category}</p>
+              <Header as='h4'>Trip Type: {this.props.trip.category}</Header>
               <p>Location: {this.props.trip.location}</p>
               <p>Date: {this.props.trip.date}</p>
               <p>Notes: {this.props.trip.notes}</p>
