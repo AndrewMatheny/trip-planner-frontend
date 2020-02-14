@@ -154,7 +154,7 @@ class App extends React.Component {
       )
     } else {
       return (
-      <div style={this.backgroundStyle}>
+      <div>
         <Router>
           <NavBar logout={this.logoutUser}/>
         <Route 

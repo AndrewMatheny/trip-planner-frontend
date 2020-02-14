@@ -7,15 +7,15 @@ import { Container } from 'semantic-ui-react'
 
 class StopsContainer extends Component {
 
-  state = {
-    show: false
-  }
+  // state = {
+  //   show: false
+  // }
 
-  handleEditShow = () => {
-    this.setState(prevState => ({
-      show: !prevState.show
-    }))
-  }
+  // handleEditShow = () => {
+  //   this.setState(prevState => ({
+  //     show: !prevState.show
+  //   }))
+  // }
 
   // deleteStop = (stop) => {
   //   fetch(`http://localhost:3000/stops/${stop.id}`,{
@@ -48,8 +48,8 @@ class StopsContainer extends Component {
           </div>
         </div>
         <div>
-        <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.handleEditShow()}>Add Stop</Button>
-        {this.state.show ? 
+        <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.props.handleAddStopShow()}>Add Stop</Button>
+        {this.props.showStop ? 
         <CreateStop user={this.props.user} trip={this.props.trip} updateStops={this.props.updateStops}/> : null
         }
         </div>
