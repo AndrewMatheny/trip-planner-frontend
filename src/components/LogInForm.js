@@ -13,8 +13,6 @@ class LoginForm extends React.Component {
     })
   }
 
-  
-
   render() {
     return (
       <Grid textAlign='center' style={{ height: '80vh' }} verticalAlign='middle'>
@@ -31,15 +29,17 @@ class LoginForm extends React.Component {
           <Form style={{opacity: 0.9}} size='large' onSubmit={(e) => this.props.handleSubmit(e)}>
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='User Name' name="username" onChange={(e) => this.handleChange(e)} />
-
               <Button color='red' fluid size='large' type="submit">
                 Login
               </Button>
+
+              <div style={{padding: '0.5rem 0 0.5rem 0'}}>
+              New to us? 
+              <Button basic size='tiny' style={{margin: '1rem 0 0 1rem'}} onClick={() => this.props.handleCreateUser()}>Sign up!</Button>
+              </div>
             </Segment>
           </Form>
-          {/* <Message>
-            New to us? <a href='#'>Sign Up</a>
-          </Message> */}
+          
         </Grid.Column>
       </Grid>
     )

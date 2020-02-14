@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Link } from 'react-router-dom'
 import { Icon } from 'semantic-ui-react'
 import '../TripCard.css'
@@ -17,7 +17,7 @@ const TripCard = props => {
               <img alt="oh no!" src={trip.image} style={{height: '200px', borderRadius: '4px'}} />
               </Link>
               </div>
-              <div className="content" style={{ opacity: '1' }}>
+              <div className="content" style={{opacity: '1'}}>
                 <div className="header">{trip.name}</div>
                 <div className="description">{trip.date}</div>
                 <div className="trash-div">
