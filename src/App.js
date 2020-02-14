@@ -20,7 +20,8 @@ class App extends React.Component {
     selected: false,
     isLoaded: false,
     loggedIn: false,
-    enteredUser: ""
+    enteredUser: "",
+    createUser: false
   }
 
   backgroundStyle = {
@@ -52,7 +53,8 @@ class App extends React.Component {
       selected: false,
       isLoaded: false,
       loggedIn: false,
-      enteredUser: ""
+      enteredUser: "",
+      createUser: false
     })
   }
 
@@ -116,6 +118,19 @@ class App extends React.Component {
     }
   }
 
+  showUserForm = () => {
+    if(this.state.createUser) {
+      return <CreateUserForm />
+    }
+  }
+
+  handleCreateUser = () => {
+    let newState = !this.state.createUser
+    this.setState({
+      createUser: newState
+    })
+  }
+
   showPage = () => {
     // this.login()
     if(this.state.loggedIn) {
@@ -131,7 +146,9 @@ class App extends React.Component {
           <Route 
             path="/trip/:id"
             render={props => <TripPageContainer {...props} selectedTrip={this.state.selectedTrip} user={this.state.userTrips}/>}/>
-          {/* <CreateUserForm /> */}
+
+           
+
         </Router>
       </div>
       )
@@ -143,9 +160,9 @@ class App extends React.Component {
         <Route 
         path="/"
         exact
-        render={props => <LogInForm {...props} handleSubmit={this.handleLogin}/> }/>
-        <CreateUserForm handleCreate={this.handleCreate} />
-        
+        render={props => <LogInForm {...props} handleSubmit={this.handleLogin} handleCreateUser={this.handleCreateUser}/> }/>
+        {/* <CreateUserForm handleCreate={this.handleCreate} /> */}
+         {this.showUserForm()}
         </Router>
         </div> ) 
     }
