@@ -18,8 +18,7 @@ class TripPageDetails extends Component {
 
   render() {
     return(
-      <div>
-        <Container style={{opacity: 0.85}}>
+        <Container style={{margin: '10px', opacity: 0.95}}>
         <div className="ui raised segment" style={{margin: '40px'}}>
           <Grid>
             <Grid.Column width={4}>
@@ -52,7 +51,6 @@ class TripPageDetails extends Component {
           <StopsContainer user={this.props.user} stops={this.props.trip.stops} trip={this.props.trip} updateStops={this.props.updateStops} deleteStop={this.props.deleteStop}/>
         </Segment>
         </Container>
-    </div>
     )
   }
 }

@@ -9,7 +9,7 @@ const TripCard = props => {
   return (
     <div className="ui column" style={{padding: '1.5rem'}}>
        <div className="ui link cards">
-          <div className="ui card raised" style={{opacity: '0.85'}}
+          <div className="ui card raised" style={{opacity: 0.9}}
             key={trip.id}
             onClick={() => props.handleTripClick(trip)}>
               <div className="ui fluid image" >

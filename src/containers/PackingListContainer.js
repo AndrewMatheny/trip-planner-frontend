@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from 'semantic-ui-react'
+import { Button, Container } from 'semantic-ui-react'
 import PackingListDisplay from '../components/PackingListDisplay'
 import CreateItemContainer from './CreateItemContainer'
 
@@ -26,7 +26,7 @@ class PackingListContainer extends Component {
 
   render() {
     return(
-      <div>
+      <Container style={{margin: '10px'}} >
         <h2>Packing List</h2>
         {this.itemCollection()}
         <Button basic color='orange' style={{margin: '10px 0px 0px 5px'}} onClick={() => this.handleEditShow()}>Add Item</Button>
@@ -34,7 +34,7 @@ class PackingListContainer extends Component {
         {this.state.show ? 
           <CreateItemContainer trip={this.props.trip} updateDetails={this.props.updateDetails} updateItems={this.props.updateItems}/> : null
         }
-      </div>
+      </Container>
     )
   }
 }
