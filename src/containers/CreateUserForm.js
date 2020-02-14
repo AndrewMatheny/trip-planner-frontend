@@ -28,7 +28,7 @@ class CreateUserForm extends Component {
       render() {
         return (
         <Container style={{opacity: 0.9}}>
-        <div className="ui raised segment" style={{margin: '40px'}}>
+        <div className="ui raised segment" style={{margin: '100px'}}>
           <Form onSubmit={() => this.handleSubmit()}> 
               <Header textAlign='center'>Create an Account</Header>
               
